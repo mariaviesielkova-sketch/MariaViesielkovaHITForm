@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="">
+<head>
+    <meta charset="utf-8" />
+    <title>artcomission</title>
+    <link rel="icon" type="image/png" href="images/oneperson.png">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <!-- CSS -->
+    <!--<link href="styles/reset.css" rel="stylesheet" />-->
+    <link href="styles/myStyle.css" rel="stylesheet" />
+
+    <!-- Scripts -->
+    <script src="jScripts/JavaScript.js" type="text/javascript">  </script>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Art Commission Form</h1>
+
+    <!-- is it sktch or something else -->
+    <div class="question">
+        <h2>What type of art would you like?</h2>
+
+        <div class="options">
+
+            <label class="option-card">
+                <img id="imgSketch" src="images/sketch.png" alt="Sketch">
+                <input type="radio" name="artType" value="Sketch" onchange="updateArtType()">
+                Sketch
+            </label>
+
+            <label class="option-card">
+                <img id="imgColour" src="images/colour.png" alt="Colour">
+                <input type="radio" name="artType" value="Colour" onchange="updateArtType()">
+                Colour
+            </label>
+
+            <label class="option-card">
+                <img id="imgRender" src="images/render.png" alt="Full Render">
+                <input type="radio" name="artType" value="Render" onchange="updateArtType()">
+                Full Render
+            </label>
+
+        </div>
+    </div>
+
+
+    <!-- type of shot for art -->
+    <div class="question">
+        <h2>What size of art would you like?</h2>
+
+        <div class="options">
+
+            <label class="option-card">
+                <img id="imgHead" src="images/headshot.png" alt="Head Shot">
+                <input type="radio" name="artSize" value="Head" onchange="updateArtSize()">
+                Head Shot
+            </label>
+
+            <label class="option-card">
+                <img id="imgHalf" src="images/halfbody.png" alt="Half Body">
+                <input type="radio" name="artSize" value="Half" onchange="updateArtSize()">
+                Half Body
+            </label>
+
+            <label class="option-card">
+                <img id="imgFull" src="images/fullbody.png" alt="Full Body">
+                <input type="radio" name="artSize" value="Full" onchange="updateArtSize()">
+                Full Body
+            </label>
+
+        </div>
+    </div>
+
+
+    <!-- staff to add -->
+    <div class="question">
+        <h2>Any additions you would like?</h2>
+
+        <div class="options">
+
+            <label class="option-card">
+                <img id="imgBackground" src="images/background.png" alt="Background">
+                <input type="checkbox" value="Background"
+                       onchange="updateAddition(this,'imgBackground')">
+                Add Background
+            </label>
+
+            <label class="option-card">
+                <img id="imgOnePerson" src="images/oneperson.png" alt="One Person">
+                <input type="checkbox" value="One Person"
+                       onchange="updateAddition(this,'imgOnePerson')">
+                One More Person
+            </label>
+
+            <label class="option-card">
+                <img id="imgTwoPeople" src="images/twopeople.png" alt="Two People">
+                <input type="checkbox" value="Two People"
+                       onchange="updateAddition(this,'imgTwoPeople')">
+                Two More People
+            </label>
+
+            <label class="option-card">
+                <img id="imgPet" src="images/pet.png" alt="Pet">
+                <input type="checkbox" value="Pet"
+                       onchange="updateAddition(this,'imgPet')">
+                Add Pet
+            </label>
+
+        </div>
+    </div>
+
+
+    <!-- oc/fanart -->
+    <div class="question">
+        <h2>What character(s) would you want to order art of?</h2>
+
+        <textarea
+                rows="6"
+                placeholder="Describe your character(s) here..."></textarea>
+    </div>
+
+    <button type="button" onclick="showSummary()">
+        Submit
+    </button>
+
+</div>
+
+<script src="script.js"></script>
+
+<!-- screeniamscaredpleasework -->
+<div id="summaryModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <h2>Commission Summary</h2>
+
+        <div id="summaryText"></div>
+
+        <button onclick="closeModal()">
+            Close
+        </button>
+
+    </div>
+
+</div>
+
+</body>
